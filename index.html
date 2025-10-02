@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라면 조리 도우미 (Ramyun Cooking Assistant)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Inter 폰트 사용 */
+        :root {
+            --selected-color: #1d4ed8; /* blue-800: 선택 시 진한 색상 */
+            --flash-color: #bfdbfe; /* blue-100: 클릭 시 순간 색상 */
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        
+        /* 버튼 클릭 시 잠시 색상 변경 효과 (0.5초) */
+        .btn-flash:active:not(.selected) {
+            background-color: var(--flash-color) !important;
+            transition: background-color 0s, border-color 0s;
+        }
+
+        /* ✅ 선택된 버튼 스타일 (더 진하게 변경) */
+        .ramyun-btn.selected, .topping-btn.selected, .egg-btn.selected, .stove-btn.selected {
+            background-color: var(--selected-color) !important;
+            color: white !important;
+            border-color: #1e40af !important; /* blue-900 border */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            transform: translateY(-2px); /* Slight lift */
+        }
+
+        /* 토핑/계란 옵션 페이드 인
